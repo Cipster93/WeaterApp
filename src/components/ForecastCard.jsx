@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThermometerHalf, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import TimeIcon from "./TimeIcon";
-import { getWeatherIcon } from "../utils/weatherIcons";
+import { getWeatherIcon } from "../utils/utils/weatherIcons";
 
 const ForecastCard = ({ forecast, cityName }) => {
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useWeather } from "../context/WeatherContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThermometerHalf, faGlobe, faWind, faDroplet, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { getWeatherIcon } from "../utils/weatherIcons";
+import { getWeatherIcon } from "../utils/utils/weatherIcons";
 import { getTimeOfDay } from "../utils/utils/timeUtils";
 import TimeIcon from "../components/TimeIcon";
 import ForecastCard from "../components/ForecastCard";
@@ -83,28 +83,27 @@ const Home = () => {
                         <>
                             <div className="weather-info-card">
                                 <p style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
-                                    <FontAwesomeIcon icon={faWind} size="sm" color="#4A90E2" />
                                     Wind: {weatherData?.wind?.speed} m/s
                                 </p>
+                                <FontAwesomeIcon icon={faWind} size="sm" color="#4A90E2" />
                             </div>
                             <div className="weather-info-card">
                                 <p style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
-                                    <FontAwesomeIcon icon={faDroplet} size="sm" color="#2196F3" />
                                     Humidity: {weatherData?.main?.humidity}%
                                 </p>
+                                <FontAwesomeIcon icon={faDroplet} size="sm" color="#2196F3" />
                             </div>
                             <div className="weather-info-card">
                                 <p style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
-                                    <FontAwesomeIcon icon={faThermometerHalf} size="sm" color="#FF6B6B" />
                                     Feels like: {toCelsius(weatherData?.main?.feels_like)}°C
                                 </p>
+                                <FontAwesomeIcon icon={faThermometerHalf} size="sm" color="#FF6B6B" />
                             </div>
                         </>
                     )}
                 </div>
             </div>
 
-            {/* Forecast display */}
             <div className="mini-weather-container">
                 {forecastData.map((forecast) => (
                     <ForecastCard
