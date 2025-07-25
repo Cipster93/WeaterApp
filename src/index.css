@@ -13,6 +13,13 @@
   flex-direction: column;
 }
 
+body,
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -25,6 +32,16 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+.appContainer {
+  display: flex;
+  width: 100%;
+  height: 99vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .main-container {
@@ -129,13 +146,14 @@
   align-items: center;
   margin-top: 20px;
   width: 110%;
+
 }
 
 .mini-weather-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(170, 14, 14, 0.1);
   border-radius: 10px;
   padding: 15px;
-  min-width: 120px;
+  width: 130px;
   text-align: center;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -203,14 +221,27 @@
 }
 
 @media (max-width: 600px) {
+  .appContainer {
+    height: auto;
+  }
 
-  .mini-weather-container,
+
   .home-side {
     flex-wrap: wrap;
     gap: 8px;
     padding: 0 10px;
     flex-direction: row;
     width: 90%;
+  }
+
+  .mini-weather-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
   }
 
   .home-side-container {
@@ -265,7 +296,6 @@
   }
 }
 
-/* Laptop: între 901px și 1200px */
 @media (min-width: 901px) and (max-width: 1200px) {
   .input {
     width: 60%;
@@ -279,6 +309,7 @@
   .mini-weather-container {
     width: 100%;
     gap: 10px;
+
   }
 
   .mini-weather-card {
