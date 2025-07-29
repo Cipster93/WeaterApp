@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useWeather } from "../context/WeatherContext";
+import { useWeather } from "../context/useWeather";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThermometerHalf, faGlobe, faWind, faDroplet, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faThermometerHalf, faGlobe, faWind, faDroplet } from '@fortawesome/free-solid-svg-icons';
 import { getWeatherIcon } from "../utils/utils/weatherIcons";
 import { getTimeOfDay } from "../utils/utils/timeUtils";
 import TimeIcon from "../components/TimeIcon";
